@@ -1,18 +1,20 @@
 import sys, pygame, os
+
+#add this part to become headless
 os.putenv('SDL_VIDEODRIVER', 'fbcon')
 os.environ["SDL_VIDEODRIVER"] = "dummy"
+#end of headless
 pygame.init()
 
-size = width, height = 320, 240
+size = width, height = 3200, 2400
 speed = [2, 2]
 black = 0, 0, 0
 
-screen = pygame.display.set_mode((1,1))
+# screen = pygame.display.set_mode(size) #remove for headless
+screen = pygame.display.set_mode((1,1)) #ulter for headless
 
-# ball = pygame.image.load("intro_ball.gif")
-# ballrect = ball.get_rect()
-ballSize = 10
-ballrect = pygame.Rect(width/2, height/2, ballSize, ballSize)
+ball = pygame.image.load("intro_ball.gif")
+ballrect = ball.get_rect()
 bounce = 0
 timer = 1
 current_time = 0
@@ -24,17 +26,16 @@ while current_time<=timer:
         if event.type == pygame.QUIT: sys.exit()
 
     ballrect = ballrect.move(speed)
-    print(ballrect)
+    # print(ballrect)
     if ballrect.left < 0 or ballrect.right > width:
         speed[0] = -speed[0]
         bounce +=1
-        print(ballrect.right )
     if ballrect.top < 0 or ballrect.bottom > height:
         speed[1] = -speed[1]
         bounce +=1
 
     screen.fill(black)
-    # screen.blit(ball, ballrect)
+    screen.blit(ball, ballrect)
     pygame.display.flip()
 
 print('bounce {0} times in {1} sec'.format(bounce,timer))
