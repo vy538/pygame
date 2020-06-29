@@ -4,6 +4,12 @@ import sys, pygame, os
 This is based on the ball example without the screen display
 'python3 -m test.py width(optinal) height(optinal)' to test it
 it will print out how many times the ball bounce to the wall
+
+ref:
+1. ball example:
+https://www.pygame.org/docs/tut/PygameIntro.html
+2. headless example:
+http://www.pygame.org/wiki/HeadlessNoWindowsNeeded
 """
 
 def ballBounce(w=3200,h=2400):
