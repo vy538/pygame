@@ -3,7 +3,7 @@ import sys, pygame, os
 """
 This is based on the ball example without the screen display
 'python3 -m test.py width(optinal) height(optinal)' to test it
-if will print out how many times the ball bounce to the wall
+it will print out how many times the ball bounce to the wall
 """
 
 def ballBounce(w=3200,h=2400):
