@@ -10,8 +10,8 @@ class PeepStatus:
 class Object:
 	def __init__(self,width,length,peepReact,time,cost,price):
 		self.size = (width,length)
-		self.peepReact = peepReact #arr looks like [thirst,hunger,nausea,happiness,angeriness,energy]
+		self.peepReact = peepReact #peep status object
 		self.time = time
 		self.cost = cost
 		self.price = price
-		self.position = None
+		self.position = (0,0)
