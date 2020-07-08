@@ -1,17 +1,26 @@
 class PeepStatus:
-	def __init__(self,thirst,hunger,nausea,happiness,angeriness,energy):
-		self.thirst = thirst
-		self.hunger = hunger
-		self.nausea = nausea
-		self.happiness = happiness
-		self.angeriness = angeriness
-		self.energy = energy
+	def __init__(self,arr):
+		self.thirst = arr[0]
+		self.hunger = arr[1]
+		self.nausea = arr[2]
+		self.happiness = arr[3]
+		self.angeriness = arr[4]
+		self.energy = arr[5]
 
 class Object:
-	def __init__(self,width,length,peepReact,time,cost,price):
-		self.size = (width,length)
-		self.peepReact = peepReact #peep status object
+	def __init__(self,name,size,peepReactArr,time,cost,price,position=(0,0)):
+		self.name = name
+		self.size = size
+		self.peepReact = Peepstatus(peepReactArr) #peep status object
 		self.time = time
-		self.cost = cost
+		self.buildingcost = cost
 		self.price = price
-		self.position = (0,0)
+		self.position = position
+
+try:
+	fp = open('object_list.txt', 'r')
+	for line in fp:
+		print(line)
+finally:
+	fp.close()
+
